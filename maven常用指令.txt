@@ -1,0 +1,9 @@
+maven常见命令： （第一次执行命令时，因为需要下载执行该命令的基础环境，所以会从中央仓库下载该环境到本地仓库）
+编译：  (  Maven基础组件 ，基础Jar)
+mvn compile   --只编译main目录中的java文件
+mvn test     测试
+mvn package          打成jar/war
+mvn install  将开发的模块 放入本地仓库，供其他模块使用 （放入的位置 是通过gav决定）
+
+mvn clean  删除target目录（删除编译文件的目录）
+运行mvn命令，必须在pom.xml文件所在目录

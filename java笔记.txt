@@ -1,0 +1,101 @@
+对一个类的静态成员访问都会促使这个类加载起来
+
+System.exit(0) 退出程序
+
+|=：两个二进制对应位都为0时，结果等于0，否则结果等于1；
+
+&=：两个二进制的对应位都为1时，结果为1，否则结果等于0；
+
+^=：两个二进制的对应位相同，结果为0，否则结果为1。
+
+多个对象共享同一个变量 用静态static
+循环中如果有switch ，那么break默认是结束switch而不是循环
+
+在java之中,break和continue都可以用来跳出当前循环,但是两者的主要区别是:
+当循环执行到break语句时,就退出整个循环,然后执行循环外的语句。
+当循环语句执行到continue时,当次循环结束,重新开始下一轮循环。如果已经是最后一轮循环了,那么这是的continue就与break效果一样了。
+
+Character.isdigit(char) 确定指定字符是否为数字。
+
+final 最终的
+
+一个类 三个属性两个实例一个静态 设计三个方法 ，申请两个构造器 一个带有两个实例参数的对象   每个类写静态块
+
+Arrays.sort(intarr);  对数组进行排序
+
+valueOf,将基本类型转换为字符串
+
+new StringBuilder 通过append进行字符串连接。
+        StringBuffer
+  字符串.split 拆分字符串中的值
+Integer.parseInt 将字符串数字转为integer类型
+
+arraycopy(被复制的数组, 从第几个元素开始复制, 要复制到的数组, 从第几个元素开始粘贴, 一共需要复制的元素个数);
+
+Math.sqrt（x） 获取x值的平方根
+
+
+
+
+
+
+
+
+
+import java.util.Scanner;  
+
+
+2*(10-z)-1 用于循环次数-2
+      输出17  依次减2
+i*2-1  用于循环次数+2
+
+return 返回参数 终止方法运行， 只能用在无返回值的方法中
+
+if用于选择一个或者多个不固定的值 if else 两个结果     if条件1  ，else if条件2或无线  else都不符合条件
+s'witch 用于选择有固定参数的值    case为后续条件 每次选择之后需要break跳出，和if中的else的功能一样，只有switch中的case全都不匹配时，就会选择默认的选项default
+switch与多重if的区别
+
+相同点：
+都是用来处理多分支条件的结构
+
+异同点：
+switch选择结构：只能处理等值条件判断的情况
+
+多重if选择结构：没有switch选择结构的限制，特别适合某个变量处于某个连续区间时的情况
+
+面向对象 
+对象应该拥有属性和方法
+属性=特征 方法=行为 
+static=类属性
+静态的不能对实例的成员产生任何访问
+实例的成员可以对实例和静态成员产生访问
+类==模板对象 类在内存中只有一个对象
+类只有一个对象
+this 只能用在实例成员内  
+构造器转发 只能写在构造器的第一行，只能写一个
+
+封装:面向属性更安全，面向用户更简单
+
+abstract abstract abstract abstract abstract abstract abstract abstract  abstract abstract abstract abstract abstract abstractabstract abstract abstract abstract
+abstract abstract  abstract abstractabstractabstract  extends extends extends extends extends
+
+implement  implement implement implementimplement implement implement implement implement  implement implement  implenment 
+implement  implement implement 
+
+继承extends ：
+ 子类继承父类 拥有父类的属性以及方法，私有pirvate不可访问，一个子类只能继承一个父类 但可实现多个接口          可重写父类方法，
+重写方法内super可访问父类方法和子类重写方法一起运行
+
+多态，面向父类编程  隐藏子类 new子类对象交给父类  多子类继承父类   父类 c = new子类1（子类2）来实现不同的功能
+
+接口  implement 书写一个接口 类实现直接拥有接口所有方法 接口方法自动public  变量都是常量
+
+抽象类 抽象类不可实例化对象 必须被继承才能使用 ，被子类继承要求必须重写抽象方法
+又分为纯抽象类和普通抽象类 区别在于纯抽象类 所有方法都是抽象方法 而普通抽象方法则拥有普通方法
+
+equals Object方法  用于比较对象和字符串可重写
+
+线程 ①Thread.currentThread表示当前代码段正在被哪个线程调用的相关信息。
+
+②this表示的是当前对象，与Thread.currentThread有很大的区别。
+volatile关键字 : 目的使数据同步 ，在同一时刻只能由一个线程来修改数据的值

@@ -1,0 +1,3 @@
+在条件分支多的时候使用switch，switch 在编译字节码时会根据判断条件生成两种字节码 ，tableswitch，（紧凑时） lookupswitch（非紧凑） 
+其中tableswitch采用类似数组样的存储结构，直接根据索引查找元素 ，所以整个查询的时间复杂度是O1， 
+使用lookupswitch时 ，会逐个查找分支进行比较或者使用二分查找， 所以查找时间复杂度 为O(logn)

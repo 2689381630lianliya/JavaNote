@@ -1,0 +1,21 @@
+/*树形化*/
+ 2     final void treeifyBin(Node<K,V>[] tab, int hash) {
+ 3         int n, index; Node<K,V> e;// 定义n:节点数组长度、index:hash对应的数组下标、e:用于循环的迭代变量,代表当前节点
+ 4         if (tab == null || (n = tab.length) < MIN_TREEIFY_CAPACITY)
+ 5             resize();// 若数组尚未初始化或者数组长度小于64,则直接扩容而不进行树形化
+ 6         else if ((e = tab[index = (n - 1) & hash]) != null) {// 获取指定数组下标的头结点e
+ 7             TreeNode<K,V> hd = null, tl = null;// 定义head节点hd、尾节点tl
+ 8             do {// 循环,该循环主要是将原单向链表转化为双向链表
+ 9                 TreeNode<K,V> p = replacementTreeNode(e, null);// 以e的hash、key、value,以及以null为后继元创建树形节点p
+10                 if (tl == null)// 若尾节点为null表明首次循环,此时e为头结点、p为根节点,因此将p赋值给表示头结点的hd
+11                     hd = p;
+12                 else {// 负责根节点已经产生过了此时tl尾节点指向上次循环创建的树形节点
+13                     p.prev = tl;// 此时p为上次循环的的后继元在本次循环为当前节点,产生当前节点与前驱元的prev链
+14                     tl.next = p;// 产生前驱元与当前节点的next链
+15                 }
+16                 tl = p;// 将tl指向当前节点
+17             } while ((e = e.next) != null);// e指向e的后继元
+18             if ((tab[index] = hd) != null)// 若指定的位置头结点不为空则进行树形化
+19                 hd.treeify(tab);// 根据链表创建红黑树结构
+20         }
+21     }
